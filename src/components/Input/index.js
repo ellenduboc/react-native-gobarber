@@ -1,14 +1,25 @@
-import React, { useEffect, useRef } from 'react';
+import React, {
+  useEffect,
+  useRef,
+  useImperativeHandle,
+  forwardRef,
+} from 'react';
 import { useField } from '@unform/core';
 
 import styled from 'styled-components';
 import { Container, TextInput, Icon } from './styles';
 
-const Input = ({ name, icon, ...rest }) => {
+const Input = ({ name, icon, ...rest }, ref) => {
   const inputElementRef = useRef(null);
 
   const { registerField, defaultValue = '', fieldName, error } = useField(name);
   const inputValueRef = useRef({ value: defaultValue });
+
+  useImperativeHandle(ref, () => ({
+    focus() {
+      inputElementRef.current.focus();
+    },
+  }));
 
   useEffect(() => {
     registerField({
@@ -43,4 +54,4 @@ const Input = ({ name, icon, ...rest }) => {
   );
 };
 
-export default Input;
+export default forwardRef(Input);

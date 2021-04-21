@@ -28,6 +28,7 @@ import {
 
 const SignIn = () => {
   const formRef = useRef(null);
+  const passwordInputRef = useRef(null);
   const navigation = useNavigation();
 
   const handleSignIn = useCallback((data: object) => {
@@ -61,9 +62,12 @@ const SignIn = () => {
                   icon="mail"
                   placeholder="E-mail"
                   returnKeyType="next"
-                  onSubmitEditing={() => {}}
+                  onSubmitEditing={() => {
+                    passwordInputRef.current?.focus();
+                  }}
                 />
                 <Input
+                  ref={passwordInputRef}
                   name="password"
                   icon="lock"
                   placeholder="Senha"
