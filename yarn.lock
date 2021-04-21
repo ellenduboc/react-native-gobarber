@@ -7174,6 +7174,11 @@ unset-value@^1.0.0:
     has-value "^0.3.1"
     isobject "^3.0.0"
 
+up@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/up/-/up-1.0.2.tgz#25f87686fdac510f67444fe8b7bd1588b5595267"
+  integrity sha1-Jfh2hv2sUQ9nRE/ot70ViLVZUmc=
+
 uri-js@^4.2.2:
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/uri-js/-/uri-js-4.4.1.tgz#9b1a52595225859e55f669d928f88c6c57f2a77e"
